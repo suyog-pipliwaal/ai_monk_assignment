@@ -31,7 +31,7 @@ export default function Home() {
     <div>
       <div>
         <input type='file' onChange={handleImageChange}/>
-        {preview && <img src={preview} alt="Preview"/>}
+        {preview && <img src={preview} width="100" height="100"alt="Preview"/>}
         <button onClick={handleUpload}>upload</button>
       </div>
       <div>
