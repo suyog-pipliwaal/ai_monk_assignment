@@ -4,3 +4,5 @@ torch
 torchvision
 Pillow
 fastapi[standard]
+opencv-python
+ultralytics
