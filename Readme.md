@@ -14,7 +14,7 @@ Containerization: Docker and Docker Compose for deployment.<br/>
 5. backend runing at http://127.0.0.1:8000
 
 
-## Teach Stack
+## Tech Stack
 1. pytorch
 2. Nextjs
 3. FastAPI
