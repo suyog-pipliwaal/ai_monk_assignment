@@ -3,7 +3,7 @@ import React from 'react';
 export default function Home() {
   const [image, setImage] = React.useState<File | null>(null);
   const [preview, setPreview] = React.useState<string | null>(null);
-  const [response, setresponse] = React.useState<{image:string; data:any[]}|null>(null);
+  const [response, setresponse] = React.useState<{image:string; data:[]}|null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0] || null;
@@ -25,7 +25,6 @@ export default function Home() {
       // setPreview(data.image)
     } catch (error) {
       console.error("Error uploading image:", error);
-      setresponse(JSON.stringify(error))
     }
   };
 
@@ -33,6 +32,7 @@ export default function Home() {
     <div>
       <div>
         <input type='file' onChange={handleImageChange}/>
+        {preview && <img src={preview} width="300" height="300" alt="Preview" />}
         {response!=null ?<img src={`data:image/jpeg;base64, ${response.image}`} width="300" height="300"alt="Preview"/>: null}
         <button onClick={handleUpload}>upload</button>
       </div>
